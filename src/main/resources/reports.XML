@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<reports>
+<report>
+    <reportName>fileName</reportName>
+    <reportDestinationSubFolder>Filename/</reportDestinationSubFolder>
+    <reportAddDate>True</reportAddDate>
+    <reportMoveOld>True</reportMoveOld>
+</report>
+</reports>
