@@ -6,7 +6,7 @@ public class Report {
     private boolean addDate;
     private boolean moveOld;
 
-    public Report(String reportName, String reportDestination,  boolean moveOld, boolean addDate,) {
+    public Report(String reportName, String reportDestination,  boolean moveOld, boolean addDate) {
         this.reportName = reportName;
         this.reportDestination = reportDestination;
         this.addDate = addDate;
@@ -45,9 +45,3 @@ public class Report {
         this.moveOld = moveOld;
     }
 }
-
-//
-//<reportName>fileName</reportName>
-//<reportDestinationSubFolder>Filename/</reportDestinationSubFolder>
-//<reportAddDate>True</reportAddDate>
-//<reportMoveOld>True</reportMoveOld>
