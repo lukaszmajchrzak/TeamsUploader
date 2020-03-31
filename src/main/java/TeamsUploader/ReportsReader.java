@@ -21,6 +21,14 @@ public class ReportsReader {
         this.xmlFile = xmlFile;
     }
 
+    /**
+     * Method reads reports.XML file and extracts reports details:
+     *  report name
+     *  report destination
+     *  move old / delete old
+     *  add date / no date
+     * @return
+     */
     public ArrayList<Report> readReports() {
         ArrayList<Report> reports = new ArrayList<>();
         try {
@@ -39,6 +47,8 @@ public class ReportsReader {
             ArrayList<String> reportDestinations = new ArrayList<>();
             ArrayList<Boolean> reportAddDate = new ArrayList<>();
             ArrayList<Boolean> reportMoveOld = new ArrayList<>();
+
+
             for (int i = 0; i < nReportNames.getLength(); i++) {
                 reportNames.add(nReportNames.item(i).getTextContent());
             }
@@ -59,6 +69,9 @@ public class ReportsReader {
                 for (int i = 0; i < reportNames.size(); i++) {
                     reports.add(new Report(reportNames.get(i), reportDestinations.get(i), reportMoveOld.get(i),reportAddDate.get(i)));
                 }
+            }
+            for(int i=0;i<reports.size();i++){
+                reports.get(i).getLogger().sendLog("Report: " + reports.get(i).getReportName() + "added to listener. Files will be moved to: " + reports.get(i).getReportDestination());
             }
 //        String[] urls = doc.getElementsByTagName("reportURL").item(x);
 //        String[] repoNames = doc.getElementsByTagName()

@@ -5,12 +5,18 @@ public class Report {
     private String reportDestination;
     private boolean addDate;
     private boolean moveOld;
+    private MyLogger logger;
 
     public Report(String reportName, String reportDestination,  boolean moveOld, boolean addDate) {
         this.reportName = reportName;
         this.reportDestination = reportDestination;
         this.addDate = addDate;
         this.moveOld = moveOld;
+        this.logger = new MyLogger();
+    }
+
+    public MyLogger getLogger() {
+        return logger;
     }
 
     public String getReportName() {
